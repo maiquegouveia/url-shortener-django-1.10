@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.db import models
 
 from .utils import create_shortcode
@@ -41,3 +42,7 @@ class KirrURL(models.Model):
 
     def __str__(self):
         return str(self.url)
+    
+    def get_short_url(self):
+        url_path = reverse('scode', kwargs={'shortcode': self.shortcode})
+        return 'http://127.0.0.1:8000' + url_path
