@@ -1,0 +1,18 @@
+{% extends 'global/base.html' %}
+{% block title %}
+Exists Already
+{% endblock %}
+
+{% block content %}
+
+<h1>Exists Already</h1>
+<p><strong>Given URL - </strong><a style="font-style: italic;" href="{{ object.url }}">{{ object.url }}</a></p>
+<p><strong>Shortened URL - </strong><a style="font-style: italic;" href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+{% if object.clickevent.count %}
+    <p><strong>Clicks - {{ object.clickevent.count }}</strong></p>
+{% else %}
+    <p><strong>Clicks - 0</strong></p>
+{% endif %}
+<a class="btn btn-lg btn-default" href="/">+ New</a>
+
+{% endblock %}

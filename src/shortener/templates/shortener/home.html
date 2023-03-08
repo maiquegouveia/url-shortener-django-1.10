@@ -1,9 +1,14 @@
-<div style="width: 800px; margin: 0 auto;">
-    <h1>{{ title }}</h1>
-    {{ forms.url.errors }}
-    <form method="POST" action=".">
-        {% csrf_token %}
-        {{ form.url }}
-        <input type="submit" value="Shorten">
-    </form>
-</div>
+{% extends 'global/base.html' %}
+{% block title %}
+Shorten that URL
+{% endblock %}
+{% block content %}
+<h1 class="cover-heading">{{ title }}</h1>
+<p class="lead">This is a website for generating simple shortened URLs. If the URL was not generated yet, it will generate and give you the shortened URL. Otherwise, you can checkout how many clicks the given URL has.</p>
+<p class="lead">
+<form method="POST" action=".">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-lg btn-default" type="submit" value="Shorten">
+</form>
+</p>
+{% endblock %}

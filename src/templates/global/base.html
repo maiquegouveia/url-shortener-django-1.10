@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL.co | {% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/3.4/examples/cover/cover.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="inner cover">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="mastfoot">
+                <div class="inner">
+                  <p>Created by Maique Gouveia</p>
+                  <p>&copy 2023</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
